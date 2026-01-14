@@ -1,0 +1,566 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		/* FinderMD App Files */
+		FA000001001 /* FinderMDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000001000 /* FinderMDApp.swift */; };
+		FA000002001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000002000 /* ContentView.swift */; };
+		FA000003001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000003000 /* SettingsView.swift */; };
+		FA000004001 /* MonitoredFoldersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000004000 /* MonitoredFoldersView.swift */; };
+		FA000005001 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000005000 /* PreferencesView.swift */; };
+		FA000006001 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000006000 /* AboutView.swift */; };
+		
+		/* Shared Files in FinderMD */
+		FA000010001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000010000 /* Constants.swift */; };
+		FA000011001 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000011000 /* Settings.swift */; };
+		FA000012001 /* MarkdownTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000012000 /* MarkdownTemplate.swift */; };
+		FA000013001 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000013000 /* SettingsManager.swift */; };
+		
+		/* FinderMDSync Extension Files */
+		FA000020001 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000020000 /* FinderSync.swift */; };
+		FA000021001 /* FilenamePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000021000 /* FilenamePrompt.swift */; };
+		FA000022001 /* MarkdownFileCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000022000 /* MarkdownFileCreator.swift */; };
+		
+		/* Shared Files in FinderMDSync */
+		FA000030001 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000010000 /* Constants.swift */; };
+		FA000031001 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000011000 /* Settings.swift */; };
+		FA000032001 /* MarkdownTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000012000 /* MarkdownTemplate.swift */; };
+		FA000033001 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000013000 /* SettingsManager.swift */; };
+		
+		/* Extension Embed */
+		FA000040001 /* FinderMDSync.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA000040000 /* FinderMDSync.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA000050000 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA100000000 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA000060000;
+			remoteInfo = FinderMDSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FA000070000 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FA000040001 /* FinderMDSync.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		/* FinderMD App */
+		FA000080000 /* FinderMD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderMD.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA000001000 /* FinderMDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderMDApp.swift; sourceTree = "<group>"; };
+		FA000002000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA000003000 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA000004000 /* MonitoredFoldersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoredFoldersView.swift; sourceTree = "<group>"; };
+		FA000005000 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		FA000006000 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		FA000007000 /* FinderMD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderMD.entitlements; sourceTree = "<group>"; };
+		FA000008000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		
+		/* Shared */
+		FA000010000 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA000011000 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		FA000012000 /* MarkdownTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTemplate.swift; sourceTree = "<group>"; };
+		FA000013000 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		
+		/* FinderMDSync Extension */
+		FA000040000 /* FinderMDSync.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinderMDSync.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA000020000 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
+		FA000021000 /* FilenamePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilenamePrompt.swift; sourceTree = "<group>"; };
+		FA000022000 /* MarkdownFileCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownFileCreator.swift; sourceTree = "<group>"; };
+		FA000023000 /* FinderMDSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FinderMDSync.entitlements; sourceTree = "<group>"; };
+		FA000024000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA000090000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA000090001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA100001000 = {
+			isa = PBXGroup;
+			children = (
+				FAA00000000 /* FinderMD */,
+				FAA00001000 /* FinderMDSync */,
+				FAA00002000 /* Shared */,
+				FAA00003000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAA00000000 /* FinderMD */ = {
+			isa = PBXGroup;
+			children = (
+				FA000001000 /* FinderMDApp.swift */,
+				FA000002000 /* ContentView.swift */,
+				FAA00000001 /* Views */,
+				FA000007000 /* FinderMD.entitlements */,
+				FA000008000 /* Info.plist */,
+			);
+			path = FinderMD;
+			sourceTree = "<group>";
+		};
+		FAA00000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA000003000 /* SettingsView.swift */,
+				FA000004000 /* MonitoredFoldersView.swift */,
+				FA000005000 /* PreferencesView.swift */,
+				FA000006000 /* AboutView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FAA00001000 /* FinderMDSync */ = {
+			isa = PBXGroup;
+			children = (
+				FA000020000 /* FinderSync.swift */,
+				FA000021000 /* FilenamePrompt.swift */,
+				FA000022000 /* MarkdownFileCreator.swift */,
+				FA000023000 /* FinderMDSync.entitlements */,
+				FA000024000 /* Info.plist */,
+			);
+			path = FinderMDSync;
+			sourceTree = "<group>";
+		};
+		FAA00002000 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA000010000 /* Constants.swift */,
+				FA000011000 /* Settings.swift */,
+				FA000012000 /* MarkdownTemplate.swift */,
+				FA000013000 /* SettingsManager.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FAA00003000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA000080000 /* FinderMD.app */,
+				FA000040000 /* FinderMDSync.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA000059999 /* FinderMD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB00000000 /* Build configuration list for PBXNativeTarget "FinderMD" */;
+			buildPhases = (
+				FA000091000 /* Sources */,
+				FA000090000 /* Frameworks */,
+				FA000092000 /* Resources */,
+				FA000070000 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA000050001 /* PBXTargetDependency */,
+			);
+			name = FinderMD;
+			productName = FinderMD;
+			productReference = FA000080000 /* FinderMD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA000060000 /* FinderMDSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB00001000 /* Build configuration list for PBXNativeTarget "FinderMDSync" */;
+			buildPhases = (
+				FA000093000 /* Sources */,
+				FA000090001 /* Frameworks */,
+				FA000094000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FinderMDSync;
+			productName = FinderMDSync;
+			productReference = FA000040000 /* FinderMDSync.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA100000000 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FA000059999 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					FA000060000 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = FAB00002000 /* Build configuration list for PBXProject "FinderMD" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA100001000;
+			productRefGroup = FAA00003000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA000059999 /* FinderMD */,
+				FA000060000 /* FinderMDSync */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA000092000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA000094000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA000091000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA000001001 /* FinderMDApp.swift in Sources */,
+				FA000002001 /* ContentView.swift in Sources */,
+				FA000003001 /* SettingsView.swift in Sources */,
+				FA000004001 /* MonitoredFoldersView.swift in Sources */,
+				FA000005001 /* PreferencesView.swift in Sources */,
+				FA000006001 /* AboutView.swift in Sources */,
+				FA000010001 /* Constants.swift in Sources */,
+				FA000011001 /* Settings.swift in Sources */,
+				FA000012001 /* MarkdownTemplate.swift in Sources */,
+				FA000013001 /* SettingsManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA000093000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA000020001 /* FinderSync.swift in Sources */,
+				FA000021001 /* FilenamePrompt.swift in Sources */,
+				FA000022001 /* MarkdownFileCreator.swift in Sources */,
+				FA000030001 /* Constants.swift in Sources */,
+				FA000031001 /* Settings.swift in Sources */,
+				FA000032001 /* MarkdownTemplate.swift in Sources */,
+				FA000033001 /* SettingsManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA000050001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA000060000 /* FinderMDSync */;
+			targetProxy = FA000050000 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FAC00000000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAC00000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FAC00001000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FinderMD/FinderMD.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinderMD/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FinderMD;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 nyldn. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nyldn.FinderMD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FAC00001001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FinderMD/FinderMD.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinderMD/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FinderMD;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 nyldn. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nyldn.FinderMD;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FAC00002000 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinderMDSync/FinderMDSync.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinderMDSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FinderMD;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 nyldn. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nyldn.FinderMD.FinderMDSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FAC00002001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = FinderMDSync/FinderMDSync.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FinderMDSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FinderMD;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 nyldn. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nyldn.FinderMD.FinderMDSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAB00000000 /* Build configuration list for PBXNativeTarget "FinderMD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC00001000 /* Debug */,
+				FAC00001001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB00001000 /* Build configuration list for PBXNativeTarget "FinderMDSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC00002000 /* Debug */,
+				FAC00002001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAB00002000 /* Build configuration list for PBXProject "FinderMD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC00000000 /* Debug */,
+				FAC00000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FA100000000 /* Project object */;
+}
