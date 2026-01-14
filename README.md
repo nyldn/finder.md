@@ -14,6 +14,8 @@ A macOS Finder Sync extension that adds **"New Markdown File..."** to Finder's r
 - **Conflict Handling** - Auto-suffix duplicates (File.md → File 2.md → File 3.md)
 - **Editor Integration** - Open new files in your preferred markdown editor
 - **After-Create Actions** - Reveal in Finder or open directly in editor
+- **Open in Terminal** - Launch your preferred terminal at any folder location
+- **Multi-Terminal Support** - Terminal.app, Ghostty, iTerm2, Warp, Alacritty, Kitty
 
 ## Requirements
 
@@ -63,6 +65,20 @@ A macOS Finder Sync extension that adds **"New Markdown File..."** to Finder's r
 
 For faster workflow, use **"New Markdown from Template"** submenu to skip the dialog and create files with your default filename.
 
+### Open in Terminal
+
+Right-click any folder (or folder background) and select **"Open in Terminal"** to launch a terminal window at that location.
+
+**Supported terminals:**
+- **Terminal.app** (macOS default)
+- **Ghostty**
+- **iTerm2**
+- **Warp**
+- **Alacritty**
+- **Kitty**
+
+Configure your preferred terminal in FinderMD Settings → Preferences.
+
 ## Configuration
 
 Launch the FinderMD app to configure settings:
@@ -86,6 +102,8 @@ The context menu **only appears** in folders you explicitly add. This is a macOS
 | **Conflict Handling** | Auto-suffix or prompt to overwrite |
 | **After Create** | Do nothing, reveal in Finder, or open in editor |
 | **Preferred Editor** | TextEdit, Obsidian, VS Code, BBEdit, etc. |
+| **Preferred Terminal** | Terminal.app, Ghostty, iTerm2, Warp, Alacritty, Kitty |
+| **Terminal Submenu** | Show all terminals in submenu or just preferred terminal |
 
 ## Project Structure
 
@@ -111,7 +129,9 @@ finder.md/
 │   ├── Constants.swift          # App group ID, keys
 │   ├── Settings.swift           # Enums and types
 │   ├── MarkdownTemplate.swift   # Template definitions
-│   └── SettingsManager.swift    # UserDefaults manager
+│   ├── SettingsManager.swift    # UserDefaults manager
+│   ├── TerminalApp.swift        # Terminal app definitions
+│   └── TerminalLauncher.swift   # Terminal launch logic
 └── FinderMD.xcodeproj
 ```
 
@@ -178,11 +198,11 @@ For distribution outside of development:
 
 ## Roadmap
 
-See `.ai/PRD-terminal-launcher.md` for planned features:
+Future enhancements under consideration:
 
-- [ ] **Open in Terminal** - Right-click to open Terminal.app at folder location
-- [ ] **Ghostty Support** - Open in Ghostty terminal
-- [ ] **Multiple Terminal Support** - iTerm2, Warp, Alacritty, etc.
+- [ ] **Custom terminal profiles** - Launch with specific terminal profiles/themes
+- [ ] **Keyboard shortcuts** - Trigger actions via hotkeys
+- [ ] **More templates** - Additional markdown templates (meeting notes, etc.)
 
 ## Contributing
 

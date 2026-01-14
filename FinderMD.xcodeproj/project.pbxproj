@@ -20,6 +20,8 @@
 		FA000011001 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000011000 /* Settings.swift */; };
 		FA000012001 /* MarkdownTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000012000 /* MarkdownTemplate.swift */; };
 		FA000013001 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000013000 /* SettingsManager.swift */; };
+		FA000014001 /* TerminalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000014000 /* TerminalApp.swift */; };
+		FA000015001 /* TerminalLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000015000 /* TerminalLauncher.swift */; };
 		
 		/* FinderMDSync Extension Files */
 		FA000020001 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000020000 /* FinderSync.swift */; };
@@ -31,6 +33,8 @@
 		FA000031001 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000011000 /* Settings.swift */; };
 		FA000032001 /* MarkdownTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000012000 /* MarkdownTemplate.swift */; };
 		FA000033001 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000013000 /* SettingsManager.swift */; };
+		FA000034001 /* TerminalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000014000 /* TerminalApp.swift */; };
+		FA000035001 /* TerminalLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA000015000 /* TerminalLauncher.swift */; };
 		
 		/* Extension Embed */
 		FA000040001 /* FinderMDSync.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FA000040000 /* FinderMDSync.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -77,6 +81,8 @@
 		FA000011000 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		FA000012000 /* MarkdownTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTemplate.swift; sourceTree = "<group>"; };
 		FA000013000 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		FA000014000 /* TerminalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalApp.swift; sourceTree = "<group>"; };
+		FA000015000 /* TerminalLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalLauncher.swift; sourceTree = "<group>"; };
 		
 		/* FinderMDSync Extension */
 		FA000040000 /* FinderMDSync.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinderMDSync.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +163,8 @@
 				FA000011000 /* Settings.swift */,
 				FA000012000 /* MarkdownTemplate.swift */,
 				FA000013000 /* SettingsManager.swift */,
+				FA000014000 /* TerminalApp.swift */,
+				FA000015000 /* TerminalLauncher.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -278,6 +286,8 @@
 				FA000011001 /* Settings.swift in Sources */,
 				FA000012001 /* MarkdownTemplate.swift in Sources */,
 				FA000013001 /* SettingsManager.swift in Sources */,
+				FA000014001 /* TerminalApp.swift in Sources */,
+				FA000015001 /* TerminalLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +302,8 @@
 				FA000031001 /* Settings.swift in Sources */,
 				FA000032001 /* MarkdownTemplate.swift in Sources */,
 				FA000033001 /* SettingsManager.swift in Sources */,
+				FA000034001 /* TerminalApp.swift in Sources */,
+				FA000035001 /* TerminalLauncher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

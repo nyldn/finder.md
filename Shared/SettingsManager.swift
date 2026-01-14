@@ -200,4 +200,41 @@ final class SettingsManager {
             defaults.synchronize()
         }
     }
+    
+    // MARK: - Terminal Preferences
+    
+    /// Bundle identifier of the preferred terminal app
+    var preferredTerminalBundleID: String {
+        get {
+            defaults.string(forKey: AppConstants.Keys.preferredTerminalBundleID) ?? "com.apple.Terminal"
+        }
+        set {
+            defaults.set(newValue, forKey: AppConstants.Keys.preferredTerminalBundleID)
+            defaults.synchronize()
+        }
+    }
+    
+    /// Whether to show the terminal submenu with all installed terminals
+    var showTerminalSubmenu: Bool {
+        get {
+            // Default to true if not set
+            if defaults.object(forKey: AppConstants.Keys.showTerminalSubmenu) == nil {
+                return true
+            }
+            return defaults.bool(forKey: AppConstants.Keys.showTerminalSubmenu)
+        }
+        set {
+            defaults.set(newValue, forKey: AppConstants.Keys.showTerminalSubmenu)
+            defaults.synchronize()
+        }
+    }
+    
+    /// Returns the preferred terminal app, falling back to Terminal.app
+    var preferredTerminal: TerminalApp {
+        let bundleID = preferredTerminalBundleID
+        if let terminal = TerminalApp.allTerminals.first(where: { $0.id == bundleID }), terminal.isInstalled {
+            return terminal
+        }
+        return TerminalApp.defaultTerminal
+    }
 }

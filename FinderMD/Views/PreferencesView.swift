@@ -64,6 +64,21 @@ struct PreferencesView: View {
             } footer: {
                 Text("Used when 'Open in editor' is selected above. Only installed apps are shown.")
             }
+            
+            // Terminal Section
+            Section {
+                Picker("Terminal", selection: $viewModel.preferredTerminalBundleID) {
+                    ForEach(viewModel.availableTerminals, id: \.id) { terminal in
+                        Text(terminal.name).tag(terminal.id)
+                    }
+                }
+                
+                Toggle("Show terminal submenu", isOn: $viewModel.showTerminalSubmenu)
+            } header: {
+                Text("Terminal")
+            } footer: {
+                Text("Choose the terminal to open when using 'Open in Terminal'. The submenu shows all installed terminals.")
+            }
         }
         .formStyle(.grouped)
         .padding()
@@ -94,11 +109,23 @@ class PreferencesViewModel: ObservableObject {
         didSet { settingsManager.preferredEditorBundleID = preferredEditorBundleID }
     }
     
+    @Published var preferredTerminalBundleID: String {
+        didSet { settingsManager.preferredTerminalBundleID = preferredTerminalBundleID }
+    }
+    
+    @Published var showTerminalSubmenu: Bool {
+        didSet { settingsManager.showTerminalSubmenu = showTerminalSubmenu }
+    }
+    
     var availableEditors: [EditorOption] {
         // Filter to only installed editors
         EditorOption.defaults.filter { editor in
             NSWorkspace.shared.urlForApplication(withBundleIdentifier: editor.id) != nil
         }
+    }
+    
+    var availableTerminals: [TerminalApp] {
+        TerminalApp.installedTerminals
     }
     
     init() {
@@ -107,6 +134,8 @@ class PreferencesViewModel: ObservableObject {
         conflictPolicy = settingsManager.conflictPolicy
         afterCreateAction = settingsManager.afterCreateAction
         preferredEditorBundleID = settingsManager.preferredEditorBundleID
+        preferredTerminalBundleID = settingsManager.preferredTerminalBundleID
+        showTerminalSubmenu = settingsManager.showTerminalSubmenu
     }
 }
 

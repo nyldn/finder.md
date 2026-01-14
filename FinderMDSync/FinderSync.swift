@@ -11,6 +11,7 @@ class FinderSync: FIFinderSync {
     private let logger = Logger(subsystem: AppConstants.extensionBundleID, category: "FinderSync")
     private let settingsManager = SettingsManager.shared
     private let fileCreator = MarkdownFileCreator()
+    private let terminalLauncher = TerminalLauncher.shared
     
     /// URLs currently being accessed with security scope
     private var accessedURLs: Set<URL> = []
@@ -113,6 +114,12 @@ class FinderSync: FIFinderSync {
             templateItem.submenu = templateMenu
             menu.addItem(templateItem)
             
+            // Separator before terminal items
+            menu.addItem(NSMenuItem.separator())
+            
+            // Terminal menu items
+            addTerminalMenuItems(to: menu)
+            
         case .contextualMenuForSidebar:
             // Simplified menu for sidebar
             let createItem = NSMenuItem(
@@ -122,6 +129,18 @@ class FinderSync: FIFinderSync {
             )
             createItem.target = self
             menu.addItem(createItem)
+            
+            // Add terminal option for sidebar too
+            menu.addItem(NSMenuItem.separator())
+            
+            let terminalItem = NSMenuItem(
+                title: "Open in Terminal",
+                action: #selector(openInPreferredTerminal(_:)),
+                keyEquivalent: ""
+            )
+            terminalItem.image = NSImage(systemSymbolName: "terminal", accessibilityDescription: "Terminal")
+            terminalItem.target = self
+            menu.addItem(terminalItem)
             
         default:
             return nil
@@ -259,6 +278,88 @@ class FinderSync: FIFinderSync {
                 logger.warning("Editor '\(editorBundleID)' not found, using default")
                 NSWorkspace.shared.open(url)
             }
+        }
+    }
+    
+    // MARK: - Terminal Menu
+    
+    private func addTerminalMenuItems(to menu: NSMenu) {
+        let installedTerminals = TerminalApp.installedTerminals
+        
+        guard !installedTerminals.isEmpty else {
+            logger.warning("No terminal apps found")
+            return
+        }
+        
+        // Main "Open in Terminal" item (uses preferred terminal)
+        let preferredTerminal = settingsManager.preferredTerminal
+        let terminalItem = NSMenuItem(
+            title: "Open in \(preferredTerminal.name)",
+            action: #selector(openInPreferredTerminal(_:)),
+            keyEquivalent: ""
+        )
+        terminalItem.image = NSImage(systemSymbolName: "terminal", accessibilityDescription: "Terminal")
+        terminalItem.target = self
+        menu.addItem(terminalItem)
+        
+        // Submenu with all installed terminals (if enabled and more than one terminal)
+        if settingsManager.showTerminalSubmenu && installedTerminals.count > 1 {
+            let terminalSubmenu = NSMenu(title: "Terminals")
+            
+            for (index, terminal) in installedTerminals.enumerated() {
+                let item = NSMenuItem(
+                    title: terminal.name,
+                    action: #selector(openInSpecificTerminal(_:)),
+                    keyEquivalent: ""
+                )
+                item.tag = index
+                item.target = self
+                
+                // Add checkmark for preferred terminal
+                if terminal.id == preferredTerminal.id {
+                    item.state = .on
+                }
+                
+                terminalSubmenu.addItem(item)
+            }
+            
+            let submenuItem = NSMenuItem(title: "Open in Terminal", action: nil, keyEquivalent: "")
+            submenuItem.submenu = terminalSubmenu
+            menu.addItem(submenuItem)
+        }
+    }
+    
+    // MARK: - Terminal Actions
+    
+    @objc func openInPreferredTerminal(_ sender: NSMenuItem) {
+        guard let targetFolder = resolveTargetFolder() else {
+            showError("Could not determine target folder")
+            return
+        }
+        
+        let terminal = settingsManager.preferredTerminal
+        if !terminalLauncher.openTerminal(terminal, at: targetFolder) {
+            showError("Failed to open \(terminal.name)")
+        }
+    }
+    
+    @objc func openInSpecificTerminal(_ sender: NSMenuItem) {
+        guard let targetFolder = resolveTargetFolder() else {
+            showError("Could not determine target folder")
+            return
+        }
+        
+        let installedTerminals = TerminalApp.installedTerminals
+        let index = sender.tag
+        
+        guard index >= 0 && index < installedTerminals.count else {
+            showError("Invalid terminal selection")
+            return
+        }
+        
+        let terminal = installedTerminals[index]
+        if !terminalLauncher.openTerminal(terminal, at: targetFolder) {
+            showError("Failed to open \(terminal.name)")
         }
     }
     

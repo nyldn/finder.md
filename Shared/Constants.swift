@@ -21,5 +21,9 @@ enum AppConstants {
         static let conflictPolicy = "conflictPolicy"
         static let afterCreateAction = "afterCreateAction"
         static let preferredEditorBundleID = "preferredEditorBundleID"
+        
+        // Terminal settings
+        static let preferredTerminalBundleID = "preferredTerminalBundleID"
+        static let showTerminalSubmenu = "showTerminalSubmenu"
     }
 }
